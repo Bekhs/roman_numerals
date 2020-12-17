@@ -10,7 +10,7 @@ def to_roman_numerals(number): # fuction for converts numbers from arabic numera
                 n += numbers[x]
                 break
             else:
-                for y in num:
+                for y in num[::-1]:
                     if number >= x-y and int(x/y) > 2:
                         number -= (x-y)
                         n+= numbers[y]
