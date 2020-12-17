@@ -1,5 +1,28 @@
 def to_roman_numerals(number): # fuction for converts numbers from arabic numerals to roman numerals
-    pass
+    numbers = {1:'I',5:'V',10:'X',50:'L',100:'C',500:'D',1000:'M',10000:'H'}
+    num = (10000,1000,500,100,50,10,5,1)
+    n = ''
+
+    while number != 0:
+        for x in num:
+            if number >= x:
+                number -= x
+                n += numbers[x]
+                break
+            else:
+                for y in num:
+                    if number >= x-y and int(x/y) > 2:
+                        number -= (x-y)
+                        n+= numbers[y]
+                        n += numbers[x]
+                        break
+                else:
+                    continue
+
+                break
+
+    return n
+
 
 def to_arabic_numerals(number): # fuction for converts numbers from roman numerals to arabic numerals
     try:
