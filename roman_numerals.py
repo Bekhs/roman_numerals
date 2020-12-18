@@ -36,7 +36,7 @@ def to_arabic_numerals(number): # fuction for converts numbers from roman numera
                 n += numbers[x]
                 a[1] = 0
             else:
-                if a[1] > 1 or ( a[1] == 1 and a[0] != x ) or int(numbers[now] / numbers[x]) <= 2:
+                if a[1] > 0 or ( a[1] == 1 and a[0] != x ) or int(numbers[now] / numbers[x]) <= 2:
                     return 'Error!'
                 else:
                     a[0] = x
